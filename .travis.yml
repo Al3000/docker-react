@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t al3000/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run al3000/docker-react yarn test --coverage
