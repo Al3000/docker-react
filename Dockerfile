@@ -8,4 +8,6 @@ RUN yarn build
 #/app/build <-- all the stuff
 
 FROM nginx
+#does nothing on dev machine
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
